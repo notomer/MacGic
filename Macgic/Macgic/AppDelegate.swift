@@ -1,36 +1,34 @@
 import Cocoa
-import SwiftUI
 
 class AppDelegate: NSObject, NSApplicationDelegate {
-    var window: CustomWindow!
+
+    var statusItem: NSStatusItem!
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        // Create the main window using CustomWindow
-        window = CustomWindow(contentRect: NSMakeRect(0, 0, 600, 50),
-                              styleMask: [.borderless],
-                              backing: .buffered, defer: false)
-        window.isOpaque = false
-        window.backgroundColor = .clear
-        window.center()
-        window.level = .floating
-        window.titleVisibility = .hidden
-        window.titlebarAppearsTransparent = true
-        window.standardWindowButton(.closeButton)?.isHidden = true
-        window.standardWindowButton(.miniaturizeButton)?.isHidden = true
-        window.standardWindowButton(.zoomButton)?.isHidden = true
-        window.makeKeyAndOrderFront(nil)
+        // Create status bar item
+        statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
+        statusItem.button?.title = "App"
+        statusItem.button?.action = #selector(toggleAppWindow)
 
-        // Set up the content view
-        let contentView = ContentView()
-        window.contentView = NSHostingView(rootView: contentView)
-        
-        // Add tap gesture recognizer to close window when clicking outside
-        let clickGesture = NSClickGestureRecognizer(target: self, action: #selector(handleClickOutside))
-        clickGesture.buttonMask = 0x1 // left mouse button
-        window.contentView?.addGestureRecognizer(clickGesture)
+        // Show the main app window
+        showMainAppWindow()
     }
-    
-    @objc func handleClickOutside() {
-        window.close()
+
+    @objc func toggleAppWindow() {
+        if NSApp.isActive {
+            NSApp.hide(nil)
+        } else {
+            NSApp.activate(ignoringOtherApps: true)
+        }
+    }
+
+    func showMainAppWindow() {
+        let mainStoryboard = NSStoryboard(name: NSStoryboard.Name("Main"), bundle: nil)
+        let mainWindowController = mainStoryboard.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier("MainWindowController")) as! NSWindowController
+        mainWindowController.showWindow(self)
+    }
+
+    func applicationWillTerminate(_ aNotification: Notification) {
+        // Insert code here to tear down your application
     }
 }

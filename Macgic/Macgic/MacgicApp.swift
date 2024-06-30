@@ -1,12 +1,19 @@
-
 import SwiftUI
 
 @main
 struct MacgicApp: App {
-    @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            GradientAnimationView()
+                .background(Color.clear)
+                .ignoresSafeArea()
+                .onAppear {
+                    let window = NSApplication.shared.windows.first
+                    window?.styleMask = [.borderless, .fullSizeContentView]
+                    window?.isOpaque = false
+                    window?.backgroundColor = .clear
+                    window?.level = .floating
+                }
         }
     }
 }
