@@ -29,7 +29,7 @@ struct GradientAnimationView: View {
                 .frame(height: 48) // --box-height: 48px;
                 .overlay(
                     HStack {
-                        TextField("Message ChatGPT", text: $textInput)
+                        TextField("Ask MacGic", text: $textInput)
                             .font(.system(.body, design: .monospaced))
                             .frame(height: 48)
                             .padding(.horizontal)
