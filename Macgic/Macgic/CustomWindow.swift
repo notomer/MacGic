@@ -5,10 +5,8 @@ class CustomWindow: NSWindow {
         return true
     }
 
-    convenience init() {
-        self.init(contentRect: NSRect(x: 0, y: 0, width: 561, height: 48),
-                  styleMask: [.borderless, .fullSizeContentView],
-                  backing: .buffered, defer: false)
+    convenience override init(contentRect: NSRect, styleMask style: NSWindow.StyleMask, backing bufferingType: NSWindow.BackingStoreType, defer flag: Bool) {
+        self.init(contentRect: contentRect, styleMask: style, backing: bufferingType, defer: flag)
         self.isOpaque = false
         self.backgroundColor = .clear
         self.level = .floating
@@ -16,9 +14,6 @@ class CustomWindow: NSWindow {
     }
 
     override func mouseDown(with event: NSEvent) {
-        let pointInScreen = NSEvent.mouseLocation
-        if !self.frame.contains(pointInScreen) {
-            self.close()
-        }
+        self.performDrag(with: event)
     }
 }

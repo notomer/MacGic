@@ -17,6 +17,7 @@
 		1716C2572C3046F30071979D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1716C2562C3046F30071979D /* AppDelegate.swift */; };
 		1716C2592C30485A0071979D /* GradientAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1716C2582C30485A0071979D /* GradientAnimationView.swift */; };
 		1716C25B2C304CDB0071979D /* CustomWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1716C25A2C304CD50071979D /* CustomWindow.swift */; };
+		17BE28332C31536D00D91F54 /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BE28322C31536D00D91F54 /* Main.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		1716C2562C3046F30071979D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1716C2582C30485A0071979D /* GradientAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientAnimationView.swift; sourceTree = "<group>"; };
 		1716C25A2C304CD50071979D /* CustomWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomWindow.swift; sourceTree = "<group>"; };
+		17BE28322C31536D00D91F54 /* Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 				1716C25A2C304CD50071979D /* CustomWindow.swift */,
 				1716C2292C2FF70C0071979D /* MacgicApp.swift */,
 				1716C2562C3046F30071979D /* AppDelegate.swift */,
+				17BE28322C31536D00D91F54 /* Main.swift */,
 				1716C22B2C2FF70C0071979D /* ContentView.swift */,
 				1716C22D2C2FF70D0071979D /* Assets.xcassets */,
 				1716C2322C2FF70D0071979D /* Macgic.entitlements */,
@@ -268,6 +271,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17BE28332C31536D00D91F54 /* Main.swift in Sources */,
 				1716C2572C3046F30071979D /* AppDelegate.swift in Sources */,
 				1716C22C2C2FF70C0071979D /* ContentView.swift in Sources */,
 				1716C22A2C2FF70C0071979D /* MacgicApp.swift in Sources */,
@@ -433,6 +437,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Macgic/Macgic.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -441,11 +446,13 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = notomer.Macgic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -460,6 +467,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Macgic/Macgic.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -468,11 +476,13 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = notomer.Macgic;
 				PRODUCT_NAME = "$(TARGET_NAME)";

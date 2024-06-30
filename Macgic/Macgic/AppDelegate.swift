@@ -1,31 +1,20 @@
 import Cocoa
+import SwiftUI
 
 class AppDelegate: NSObject, NSApplicationDelegate {
-
-    var statusItem: NSStatusItem!
+    var window: NSWindow!
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        // Create status bar item
-        statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
-        statusItem.button?.title = "App"
-        statusItem.button?.action = #selector(toggleAppWindow)
+        let contentView = ContentView()
 
-        // Show the main app window
-        showMainAppWindow()
-    }
-
-    @objc func toggleAppWindow() {
-        if NSApp.isActive {
-            NSApp.hide(nil)
-        } else {
-            NSApp.activate(ignoringOtherApps: true)
-        }
-    }
-
-    func showMainAppWindow() {
-        let mainStoryboard = NSStoryboard(name: NSStoryboard.Name("Main"), bundle: nil)
-        let mainWindowController = mainStoryboard.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier("MainWindowController")) as! NSWindowController
-        mainWindowController.showWindow(self)
+        window = CustomWindow(
+            contentRect: NSRect(x: 0, y: 0, width: 600, height: 400),
+            styleMask: [.borderless, .fullSizeContentView],
+            backing: .buffered, defer: false)
+        window.center()
+        window.setFrameAutosaveName("Main Window")
+        window.contentView = NSHostingView(rootView: contentView)
+        window.makeKeyAndOrderFront(nil)
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
