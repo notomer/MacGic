@@ -1,8 +1,10 @@
-//
-//  Main.swift
-//  Macgic
-//
-//  Created by Omer Khan on 6/30/24.
-//
+import Cocoa
 
-import Foundation
+@main
+struct Main {
+    static func main() {
+        let delegate = AppDelegate()
+        NSApplication.shared.delegate = delegate
+        _ = NSApplicationMain(CommandLine.argc, CommandLine.unsafeArgv)
+    }
+}

@@ -5,11 +5,16 @@ class CustomWindow: NSWindow {
         return true
     }
 
-    convenience override init(contentRect: NSRect, styleMask style: NSWindow.StyleMask, backing bufferingType: NSWindow.BackingStoreType, defer flag: Bool) {
-        self.init(contentRect: contentRect, styleMask: style, backing: bufferingType, defer: flag)
+    override init(contentRect: NSRect, styleMask style: NSWindow.StyleMask, backing bufferingType: NSWindow.BackingStoreType, defer flag: Bool) {
+        super.init(contentRect: contentRect, styleMask: style, backing: bufferingType, defer: flag)
         self.isOpaque = false
         self.backgroundColor = .clear
-        self.level = .floating
+        self.titleVisibility = .hidden
+        self.titlebarAppearsTransparent = true
+        self.standardWindowButton(.closeButton)?.isHidden = true
+        self.standardWindowButton(.miniaturizeButton)?.isHidden = true
+        self.standardWindowButton(.zoomButton)?.isHidden = true
+        self.toolbar = NSToolbar()
         self.collectionBehavior = [.canJoinAllSpaces, .fullScreenAuxiliary]
     }
 

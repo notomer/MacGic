@@ -1,6 +1,5 @@
 import SwiftUI
 
-@main
 struct MacgicApp: App {
     var body: some Scene {
         WindowGroup {

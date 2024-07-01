@@ -110,8 +110,8 @@
 				1716C22B2C2FF70C0071979D /* ContentView.swift */,
 				1716C22D2C2FF70D0071979D /* Assets.xcassets */,
 				1716C2322C2FF70D0071979D /* Macgic.entitlements */,
-				1716C22F2C2FF70D0071979D /* Preview Content */,
 				1716C2582C30485A0071979D /* GradientAnimationView.swift */,
+				1716C22F2C2FF70D0071979D /* Preview Content */,
 			);
 			path = Macgic;
 			sourceTree = "<group>";
